@@ -1,11 +1,14 @@
 # EpicQuest
 
+***Resources***
 For this projects I am creating a Pokemon game that utilizes an api call from https://api.pokemontcg.io.
 
 my Wire Frame can be viewed follwing this link. 
 https://www.figma.com/file/o0e9v8LVFv1Fhps3f9HOcU/Untitled?type=design&node-id=0%3A1&mode=design&t=mFNdHIp8WB58hHxX-1 
 
 My successful API Call can be viewed by utilizing live server and entering in dp3-1 or mcd19-1 into the search bar. 
+
+***Gameplay***
 
 The game will begin with 2 "stacks" of cards. 1 set will be for playerOne and the second will be for a computerOpponent. 
 
@@ -22,3 +25,10 @@ If playerOne card is defeated first the user will be prompted to choose another 
 Gameplay will continue until either playerOne or the computer is out of cards.
 
 The screen will then animate displaying the winner in a pop up box and the option to play again.
+
+***Challenges***
+
+I forsee some challenges in drilling down the data from the API and storing it as an object. There is a large amount of data that is pulled on each request and the loading time could cause the user to lose interest.
+
+I forsee challenges in developing the gameplay logic, the randomness of the cards, the math required for the individuals moves and its damage points, as well as the computer AI for the user to play with will all present a challenge.
+

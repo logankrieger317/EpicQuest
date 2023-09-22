@@ -35,8 +35,8 @@ button2.addEventListener('click', async () => {
     console.log(textInput)
 
 
-const pokeName2 = await axios.get(`https://api.pokemontcg.io/v2/cards/${textInput2}`)
-console.log(pokeName2)
+    const pokeName2 = await axios.get(`https://api.pokemontcg.io/v2/cards/${textInput2}`)
+    console.log(pokeName2.data.data.name)
 
     pokemonName2.innerText = pokeName2.data.data.name
     pokemonImage2.src = pokeName2.data.data.images.small
