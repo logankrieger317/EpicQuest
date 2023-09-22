@@ -1,45 +1,51 @@
-let button = document.querySelector("#searchButton")
-let button2 = document.querySelector("#searchButton2")
+let button = document.querySelector("#startButton")
+
 
 button.addEventListener('click', async () => {
-    //variables 
+    //Player Variables
     let pokemonName = document.querySelector("#pokemonName")
     let pokemonImage = document.querySelector("#pokemonImage")
-    let textInput = document.querySelector("#inputBar").value
+    let pokeMove1 = document.querySelector("#move1")
+    let pokeMove2 = document.querySelector("#move2")
+    //Computer Variables
+    let comPokemonName= document.querySelector("#comPokemonName") 
+    let comPokemonImage = document.querySelector("#comPokemonImage")
    
-    //Checking to ensure user input is logged. 
-    console.log(textInput)
     
     //API Call
-
-    const pokeName = await axios.get(`https://api.pokemontcg.io/v2/cards/${textInput}`)
-    console.log(pokeName.data.data.name)
-
-    //Random Assingment of Cards
+    const randomCard1 =  await axios.get(`https://api.pokemontcg.io/v2/cards`)
+    console.log(randomCard1.data.data)
    
+    //Random Assingment of Cards
+
+   let number = Math.floor(Math.random() * 250)
+//    let number2 = Math.floor(Math.random() * 99)
+   let number3 = Math.floor(Math.random() * 250)
+//    let number4 = Math.floor(Math.random() * 99)
+
+    console.log(number)
+    // console.log(number2)
+
+    //Player Cards
+    pokemonName.innerText = randomCard1.data.data[number].name
+    pokemonImage.src = randomCard1.data.data[number].images.small
+    console.log(number,)
     
-    //Display based on user input
-    pokemonName.innerText = pokeName.data.data.name
-    pokemonImage.src = pokeName.data.data.images.small
+    
+    pokeMove1.innerHTML = randomCard1.data.data[number].attacks[0].name
+    console.log(number)
+    console.log(pokeMove1)
 
-}
-)
+    // pokeMove2.innerHTML= randomCard1.data.data[number].attacks[1].name
+    // console.log(number,)
+    // console.log(pokeMove2)
 
-button2.addEventListener('click', async () => {
-    //variables 
-    let pokemonName2= document.querySelector("#pokemonName2") 
-    let pokemonImage2 = document.querySelector("#pokemonImage2")
-    let textInput2 = document.querySelector("#inputBar2").value
-    let textInput = document.querySelector("#inputBar").value
-    //Checking to ensure user input is logged. 
-    console.log(textInput)
-
-
-    const pokeName2 = await axios.get(`https://api.pokemontcg.io/v2/cards/${textInput2}`)
-    console.log(pokeName2.data.data.name)
-
-    pokemonName2.innerText = pokeName2.data.data.name
-    pokemonImage2.src = pokeName2.data.data.images.small
+   
+   //Computer Cards
+    const computerCard1 = await axios.get(`https://api.pokemontcg.io/v2/cards`)
+    console.log(computerCard1.data.data)
+    comPokemonName.innerText = computerCard1.data.data[number3].name
+    comPokemonImage.src = computerCard1.data.data[number3].images.small
 
 }
 )
