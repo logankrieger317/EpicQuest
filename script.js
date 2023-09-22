@@ -6,19 +6,19 @@ button.addEventListener('click', async () => {
     let pokemonName = document.querySelector("#pokemonName")
     let pokemonImage = document.querySelector("#pokemonImage")
     let textInput = document.querySelector("#inputBar").value
+   
     //Checking to ensure user input is logged. 
     console.log(textInput)
     
     //API Call
 
     const pokeName = await axios.get(`https://api.pokemontcg.io/v2/cards/${textInput}`)
-    console.log(pokeName)
+    console.log(pokeName.data.data.name)
 
-  
-    //Display based on user input
-
+    //Random Assingment of Cards
    
     
+    //Display based on user input
     pokemonName.innerText = pokeName.data.data.name
     pokemonImage.src = pokeName.data.data.images.small
 
