@@ -27,7 +27,7 @@ h1{
 #pokemonImage, #pokemonImage2{
     padding: 10px;
     /* animation: shake 2s infinite; */
-}
+}   
     
 .computer{
     height:20vb;
@@ -38,7 +38,7 @@ h1{
     align-items: baseline;
     justify-content: center;
     padding: 20px;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     padding-top:50%;
 }
 .pokeMove2{
