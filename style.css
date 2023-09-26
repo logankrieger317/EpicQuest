@@ -1,4 +1,11 @@
-
+body{
+    background-image: url(stadium.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+}
 
 h1{
     display: flex;
@@ -6,40 +13,42 @@ h1{
     justify-content: center;
 }
 .playerArea{
+    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
-    /* border: 2px solid rgb(222, 24, 24) */
+    margin: 5px 5px;
 }
 
 .player1, .computer{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20vb;
-    width:35vb;
+    height: 50vb;
+    width:50vb;
     flex-direction: row;
     flex-wrap: wrap;
-    /* border: 2px solid black */
+    /* border: 2px solid yellow; */
+    background-color: rgba(255, 255, 255, 0.1);
 }
-#pokemonImage, #pokemonImage2{
+#pokemonImage, #comPokemonImage{
     padding: 10px;
-    /* animation: shake 2s infinite; */
-}   
-    
-.computer{
-    height:20vb;
+    animation: slideInRight 2s;
    
-}
+}   
+
+#comPokemonImage{
+    animation: slideInLeft 2s;
+}    
+
 .startButton{
     display: flex;
     align-items: baseline;
     justify-content: center;
     padding: 20px;
     /* border: solid 2px black; */
-    padding-top:50%;
+    /* padding-top:50%; */
 }
 .pokeMove2{
     height: 100px;
@@ -68,3 +77,21 @@ h1{
     animation: shake 0.5s;
     animation-iteration-count: infinite;
   }
+
+ @keyframes slideInLeft{
+        0%{
+            transform: translateX(1000px);
+        }
+        100%{
+            transform: translateX(0px);
+        }
+ }
+
+    @keyframes slideInRight{
+            0%{
+                transform: translateX(-1000px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+    }
