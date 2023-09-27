@@ -2,22 +2,24 @@ let button = document.querySelector("#startButton")
 
 
 button.addEventListener('click', async () => {
-  
+
+
     //Player Variables
     let pokemonName = document.querySelector("#pokemonName")
     let pokemonImage = document.querySelector("#pokemonImage")
     let attackButton = document.querySelector("#attackButton")
     let playerScore = document.querySelector("#playerScore")
+    playerScore=0
     //Computer Variables
     let comPokemonName= document.querySelector("#comPokemonName") 
     let comPokemonImage = document.querySelector("#comPokemonImage")
     let computerScore = document.querySelector("#computerScore")
        
     //Random Assingment of Cards
-    let number1 = Math.floor(Math.random() * 250)
-    let number2 = Math.floor(Math.random() * 250)
-    let computerNum1 = Math.floor(Math.random() * 250)
-    let computerNum2 = Math.floor(Math.random() * 250)
+    let number1 = Math.floor(Math.random() * 2 * 100)
+    let number2 = Math.floor(Math.random() * 50)
+    let computerNum1 = Math.floor(Math.random() * 2* 100)
+    let computerNum2 = Math.floor(Math.random() * 50)
 
     console.log(number1)
     console.log(computerNum1)
@@ -55,16 +57,16 @@ button.addEventListener('click', async () => {
         console.log(playerHp)
         
 
-        console.log(`CStarting HP ${computerHp}`)
-        console.log(`PAttack ${playerAttack}`)
+        // console.log(`CStarting HP ${computerHp}`)
+        // console.log(`PAttack ${playerAttack}`)
 
-        computerHp = computerHp - playerAttack
-        console.log(`CHP after PAttack ${computerHp}`)
+        // computerHp = computerHp - playerAttack
+        // console.log(`CHP after PAttack ${computerHp}`)
 
-        console.log(`Name of CAttack ${computerAttack}`)
+        // console.log(`Name of CAttack ${computerAttack}`)
 
-        playerHp = playerHp - computerAttack
-        console.log(`playerHP After Attack ${playerHp}`)
+        // playerHp = playerHp - computerAttack
+        // console.log(`playerHP After Attack ${playerHp}`)
 
         // Battle Loop
             if (playerHp > 0 && computerHp > 0){
@@ -80,12 +82,12 @@ button.addEventListener('click', async () => {
                 
                         if (playerHp > computerHp && computerHp <= 0)    {
                          console.log("Player Wins")
-                         playerScore++
+                         playerScore = playerScore++
                          playerScore.innerHTML = playerScore
 
                         }else (playerHp < computerHp && playerHp <= 0);{
                             console.log("Computer Wins")
-                            computerScore++
+                           computerScore = computerScore++
                             computerScore.innerHTML = computerScore}
 
                 }else if (playerHp < computerHp && playerHp <= 0){
@@ -94,8 +96,8 @@ button.addEventListener('click', async () => {
                     computerScore.innerHTML = computerScore
                 }else (playerHp > 0 && computerHp <= 0);{
                     console.log("Player Wins")
-                    playerScore++
-                    playerScore.innerHTML = playerScore
+                    
+                    playerScore.innerHTML = playerScore++
                 }
             
         }
