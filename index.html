@@ -9,10 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
     </head>
     <body>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1 id="modalText">Modal Test </h1>
+            </div>
+        </div>
         <div class="header">
-            <h1>Pokemon Card Arena</h1>
+            <h1 class="header">Pokemon Card Arena</h1>
         </div>
         <div class="playerArea">
 
@@ -23,23 +30,23 @@
             <h3 id="playerScore">Player Score: </h3>
             
         </div>
-        <div id="mymodal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1 id="modalText">Modal Test </h1>
-            </div>
-        </div> 
+        
 
         <div class="computer">
+            <div>
             <h2 id="comPokemonName"> </h2>
+            </div>
+            <div>
             <img id="comPokemonImage"/>
-            <h3 id="comScore">Computer Score: </h3>
-            
+            </div>
+           
+            </div>
         </div>
-        </div>
+    </div>
         <div class="startButton">
             <input type="button"  value="Start Game" id="startButton">
         </div>
         <script src="script.js" async defer></script>
+        <script src="modal.js"></script>
     </body>
 </html>

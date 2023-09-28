@@ -149,22 +149,44 @@ h1{
     body{
         background-color:#EFFAFB ;
         color: white;
-        background-size: 900px 900px;
-        background-position-x: -250px;
-        background-position-y: 12.5px;
+        background-size: 300px 800px ;
+        width: 299px;
+       
+    }
+    .header{
+        font-size: 35px;
     }
     #pokemonImage, #comPokemonImage{
-        height:200px;
-        width: 150px;
+        height:150px;
+        width: 100px;
+        padding: 0;
     }   
 }
 
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 400px) {
     body{
         background-color:#EFFAFB ;
         color: white;
-        background-size: 1400px 750px;
+        background-size: 400px 800px ;
+        width: 300px;
+       
+    }
+    .header{
+        font-size: 30px;
+    }
+    #pokemonImage, #comPokemonImage{
+        height:150px;
+        width: 100px;
+        padding: 0;
+    }   
+}
+
+@media only screen and (main-width: 500px) {
+    body{
+        background-color:#EFFAFB ;
+        color: white;
+        background-size: 500px 800px;
         background-position: center;
         background-position-y:-0.25px;
     }
@@ -176,9 +198,11 @@ h1{
 
 
 
-
 @media only screen and (min-width: 768px) {
-     body{color: white;
+     body{
+        color: white;
+        background-size: 768px 800px;
+        width: 98vb;
     }
     #pokemonImage, #comPokemonImage{
         height:250px;
@@ -201,13 +225,27 @@ h1{
     }   
 }
 
+@media only screen and (min-width: 1100px) {
+    body{
+        background-color:#EFFAFB ;
+        color: white;
+        background-size: 1200px 1200px;
+        background-position: center;
+        background-position-y:-0.25px;
+    }
+    #pokemonImage, #comPokemonImage{
+        height:220px;
+        width: 165px;
+    }   
+}
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+
 @media only screen and (min-width: 1200px) {
     body{
         background-color:#EFFAFB ;
         color: white;
-        background-size: 1280px 800px;
+        background-size: 1580px 1000px;
         background-position: center;
         background-position-y:-0.25px;
     }
@@ -215,4 +253,74 @@ h1{
         height:300px;
         width: 200px;
     }   
+}
+
+/* Modal Style */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+    align-content: center;
+    min-width: 500px;
+   
+}
+  .modal-img{
+    width: 20vw;
+    height: 20vw;
+}
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    color: black;
+    margin: auto;
+    padding: 100px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
+    
+    
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-btn{
+    width: 50%;
+    height: auto;
+    margin-top: 5x;
+    margin-bottom: 10px;
+  }
+
+  .modal-title{
+    padding: 10px;
+  }
+.email{
+    float: left;
+
+}
+#email{
+    width: 100%;
 }
