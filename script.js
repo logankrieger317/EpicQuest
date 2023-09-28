@@ -2,18 +2,15 @@
 
 const w = window.innerWidth;
 const h= window.innerHeight;
-// let PlayerScreenSize = `${w}px ${h}px`
-// console.log(PlayerScreenSize)
+let PlayerScreenSize = `${w}px ${h}px`
+console.log(PlayerScreenSize)
 
-// window.onload = document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
-window.onload = document.getElementById("myModal").style.backgroundSize=`${w}px ${h}px`;
-
-// window.onload = function display(){
-//     const w = window.innerWidth;
-//     const h= window.innerHeight;
-//     let playerScreenSize = document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
-//     console.log(`This Display Is ${playerScreenSize}`);
-// }
+function playerScreenResize() {
+    document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
+    console.log(`${w}px ${h}px`)
+    // document.getElementById('myModal').style.backgroundSize=`${w}px ${h}px`;
+    }
+window.onload = playerScreenResize()
 
 
 
@@ -116,6 +113,7 @@ button.addEventListener('click', async () => {
 //Modal Logic
 // Get the modal
 let modal = document.getElementById("myModal");
+
 
 // Get the button that opens the modal
 let btn = document.getElementById("#startButton");

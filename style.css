@@ -43,13 +43,24 @@ h1{
     animation: slideInLeft 2s;
 }    
 
-.startButton{
+#startButton{
     display: flex;
-    align-items: baseline;
+    border-radius: 50%;
+    background-color: rgba(7, 7, 7, 0.3);
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Pokemon Solid', sans-serif;
+    align-items: center;
     justify-content: center;
-    padding: 20px;
+    height: 10vh;
+    width: 30vh;
+    opacity: 0.8;   
 }
-
+#startbutton:hover{
+    opacity: 1;
+    background-color: red;
+    cursor: pointer;
+}
 
 
 /* Shaking Animation */
@@ -117,12 +128,17 @@ h1{
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://mcdn.wallpapersafari.com/medium/29/32/ZgUwYN.jpg);
     color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: auto;
-    padding: 100px;
+    height: 50%;
     border: 1px solid #888;
-    width: 100%;
     box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
     
     
@@ -130,6 +146,7 @@ h1{
   
   /* The Close Button */
   .close {
+    display: none;
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -217,4 +234,65 @@ h1{
 
   .modal-title{
     padding: 10px;
+}
+
+.damageModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 932px; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(8, 8, 8, 0.755); /* Black w/ opacity */
+  text-align: center;
+  align-content: center;
+  
+ 
+}
+.modal-img{
+  width: 10vw;
+  height: 10vw;
+}
+
+/* Damage  Modal Content */
+.damageModalContent {
+  background-color: #fefefe;
+  color: black;
+  margin: auto;
+  padding: 100px;
+  border: 1px solid #888;
+  width: 100%;
+  box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
+  
+  
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-btn{
+  width: 50%;
+  height: auto;
+  margin-top: 5x;
+  margin-bottom: 10px;
+}
+
+.modal-title{
+  padding: 10px;
 }
