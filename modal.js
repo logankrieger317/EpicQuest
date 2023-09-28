@@ -11,14 +11,23 @@ let span = document.getElementsByClassName("close")[0];
 window.onload = function() {
   modal.style.display = "block";
 }
+//open the attacks once computer card loads
+comPokemonImage.onload = function () {
+  attackModal.style.display="block"
+
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-modalSb.onclick = function() {
+startButton.onclick = function() {
   modal.style.display = "none";
 }
+attackButton.onclick = function(){
+  attackModal.style.display= "none";
+}
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

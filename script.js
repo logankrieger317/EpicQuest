@@ -1,3 +1,23 @@
+//automatic resizing of background image on screen load
+
+const w = window.innerWidth;
+const h= window.innerHeight;
+// let PlayerScreenSize = `${w}px ${h}px`
+// console.log(PlayerScreenSize)
+
+// window.onload = document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
+window.onload = document.getElementById("myModal").style.backgroundSize=`${w}px ${h}px`;
+
+// window.onload = function display(){
+//     const w = window.innerWidth;
+//     const h= window.innerHeight;
+//     let playerScreenSize = document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
+//     console.log(`This Display Is ${playerScreenSize}`);
+// }
+
+
+
+//Beginning of Game Logic
 let button = document.querySelector("#startButton")
 
 
@@ -56,18 +76,6 @@ button.addEventListener('click', async () => {
         let playerHp = allPlayerCards[number1].hp
         console.log(playerHp)
         
-
-        // console.log(`CStarting HP ${computerHp}`)
-        // console.log(`PAttack ${playerAttack}`)
-
-        // computerHp = computerHp - playerAttack
-        // console.log(`CHP after PAttack ${computerHp}`)
-
-        // console.log(`Name of CAttack ${computerAttack}`)
-
-        // playerHp = playerHp - computerAttack
-        // console.log(`playerHP After Attack ${playerHp}`)
-
         // Battle Loop
             if (playerHp > 0 && computerHp > 0){
                 computerHp = computerHp - playerAttack
@@ -103,11 +111,43 @@ button.addEventListener('click', async () => {
         }
     )
 
-
-    
-    
-
-
-
 }
 )
+//Modal Logic
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("#startButton");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+window.onload = function() {
+  modal.style.display = "block";
+}
+//open the attacks once computer card loads
+comPokemonImage.onload = function () {
+  attackModal.style.display="block"
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+startButton.onclick = function() {
+  modal.style.display = "none";
+}
+attackButton.onclick = function(){
+  attackModal.style.display= "none";
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

@@ -3,8 +3,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    height: 98vh;
-    width: 98vw;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 1em;                                    
 }
 
 h1{
@@ -13,7 +13,6 @@ h1{
     justify-content: center;
 }
 .playerArea{
-    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,14 +28,16 @@ h1{
     width:49vb;
     flex-direction: row;
     flex-wrap: wrap;
-    /* border: 2px solid yellow; */
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(7, 7, 7, 0.3);
 }
 #pokemonImage, #comPokemonImage{
-    padding: 10px;
+    
     animation: slideInRight 2s;
    
-}   
+}  
+#pokemonName, #comPokemonName{
+   padding: 20%;
+} 
 
 #comPokemonImage{
     animation: slideInLeft 2s;
@@ -47,47 +48,8 @@ h1{
     align-items: baseline;
     justify-content: center;
     padding: 20px;
-    /* border: solid 2px black; */
-    /* padding-top:50%; */
-}
-.pokeMove2{
-    height: 100px;
-    width: 100px;
-    border: 2px solid black;
 }
 
-.modal{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
 
 
 /* Shaking Animation */
@@ -129,132 +91,6 @@ h1{
     }
 
 
-
-@media only screen and (max-width: 300px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 300px 650px;        
-            
-        }
-
-    #pokemonImage, #comPokemonImage{
-            height:50px;
-            width: 25px;
-        }   
-    }
-
-
-@media only screen and (min-width: 301px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 300px 800px ;
-        width: 299px;
-       
-    }
-    .header{
-        font-size: 35px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:150px;
-        width: 100px;
-        padding: 0;
-    }   
-}
-
-
-@media only screen and (min-width: 400px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 400px 800px ;
-        width: 300px;
-       
-    }
-    .header{
-        font-size: 30px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:150px;
-        width: 100px;
-        padding: 0;
-    }   
-}
-
-@media only screen and (main-width: 500px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 500px 800px;
-        background-position: center;
-        background-position-y:-0.25px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:220px;
-        width: 165px;
-    }   
-}
-
-
-
-@media only screen and (min-width: 768px) {
-     body{
-        color: white;
-        background-size: 768px 800px;
-        width: 98vb;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:250px;
-        width: 200px;
-    }
-}
-
-
-@media only screen and (min-width: 992px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 992px 992px;
-        background-position: center;
-        background-position-y:-0.25px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:220px;
-        width: 165px;
-    }   
-}
-
-@media only screen and (min-width: 1100px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 1200px 1200px;
-        background-position: center;
-        background-position-y:-0.25px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:220px;
-        width: 165px;
-    }   
-}
-
-
-
-@media only screen and (min-width: 1200px) {
-    body{
-        background-color:#EFFAFB ;
-        color: white;
-        background-size: 1580px 1000px;
-        background-position: center;
-        background-position-y:-0.25px;
-    }
-    #pokemonImage, #comPokemonImage{
-        height:300px;
-        width: 200px;
-    }   
-}
-
 /* Modal Style */
 /* The Modal (background) */
 .modal {
@@ -265,18 +101,18 @@ h1{
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    height: 932px; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     text-align: center;
     align-content: center;
-    min-width: 500px;
+    
    
 }
   .modal-img{
-    width: 20vw;
-    height: 20vw;
+    width: 10vw;
+    height: 10vw;
 }
   
   /* Modal Content */
@@ -286,7 +122,7 @@ h1{
     margin: auto;
     padding: 100px;
     border: 1px solid #888;
-    width: 80%;
+    width: 100%;
     box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
     
     
@@ -316,11 +152,69 @@ h1{
 
   .modal-title{
     padding: 10px;
-  }
-.email{
-    float: left;
-
 }
-#email{
+
+
+
+/* Attack Modal  */
+
+.attackModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 932px; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(8, 8, 8, 0.755); /* Black w/ opacity */
+    text-align: center;
+    align-content: center;
+    
+   
+}
+  .modal-img{
+    width: 10vw;
+    height: 10vw;
+}
+  
+  /* Attack Modal Content */
+  .AttackModalContent {
+    background-color: #fefefe;
+    color: black;
+    margin: auto;
+    padding: 100px;
+    border: 1px solid #888;
     width: 100%;
+    box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
+    
+    
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-btn{
+    width: 50%;
+    height: auto;
+    margin-top: 5x;
+    margin-bottom: 10px;
+  }
+
+  .modal-title{
+    padding: 10px;
 }
