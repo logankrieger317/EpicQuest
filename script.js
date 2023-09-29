@@ -44,7 +44,8 @@ button.addEventListener('click', async () => {
     let number1 = Math.floor(Math.random() * 2 * 100)
     let number2 = Math.floor(Math.random() * 50)
     let computerNum1 = Math.floor(Math.random() * 2* 100)
-    let computerNum2 = [179 , 65, 127, 55 , 77 , 69 , 80 , 138 , 83, 191, 5 , 186]
+    let testPairs = [179 , 65, 127, 55 , 77 , 69 , 80 , 138 , 83, 191, 5 , 186, 6,157,0,146]
+    let testPairs2 = [65, 127, 55 , 77 , 69 , 80 , 138 , 83, 191, 5 , 186, 6,157,0,146,179]
     
     let computerNm2 = Math.floor(Math.random()*10)
     console.log(computerNm2)
@@ -63,10 +64,10 @@ button.addEventListener('click', async () => {
     console.log(backupCardImage)
 
     
-    pokemonName.innerText = allPlayerCards[number1].name
-    pokemonImage.src = allPlayerCards[number1].images.small
+    pokemonName.innerText = allPlayerCards[testPairs[1]].name
+    pokemonImage.src = allPlayerCards[testPairs[1]].images.small
 
-    if (allPlayerCards[number1].name === undefined){
+    if (allPlayerCards[testPairs[1]].name === undefined){
         pokemonName.innerText = backupCard
         pokemonImage.src = backupCardImage}
 
@@ -76,12 +77,12 @@ button.addEventListener('click', async () => {
     const computerCard1 = await axios.get(`https://api.pokemontcg.io/v2/cards`)
     allComputerCards =computerCard1.data.data
 
-    comPokemonName.innerText = allComputerCards[computerNum1].name
-    comPokemonImage.src = allComputerCards[computerNum1].images.small
+    comPokemonName.innerText = allComputerCards[testPairs2[1]].name
+    comPokemonImage.src = allComputerCards[testPairs2[1]].images.small
     document.getElementById("comPokemonImage").style.size
 
     //Attack Button
-    let attack1 =  allPlayerCards[number1].attacks[0].name
+    let attack1 =  allPlayerCards[testPairs[1]].attacks[0].name
     console.log(attack1)
     
 
@@ -89,52 +90,45 @@ button.addEventListener('click', async () => {
     
     attackButton.addEventListener('click', () => {
         console.log("Start Attacks")
-        let playerAttack1 =  allPlayerCards[number1].attacks[0].damage
+        let playerAttack1 =  allPlayerCards[testPairs[1]].attacks[0].damage
         let playerAttack = playerAttack1.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(playerAttack) 
-        let computerAttack = allComputerCards[computerNum1].attacks[0].damage
+        let computerAttack = allComputerCards[testPairs2[1]].attacks[0].damage
         computerAttack = computerAttack.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(computerAttack)
-        // console.log(computerAttack)
-        let computerHp = allComputerCards[computerNum1].hp
+        let computerHp = allComputerCards[testPairs2[1]].hp
         // console.log(computerHp)
-        let playerHp = allPlayerCards[number1].hp
+        let playerHp = allPlayerCards[testPairs[1]].hp
         // console.log(playerHp)
         
         // Battle Loop
-        while (playerHp > computerHp){
-
-            // if (playerAttack === 'NAN' || playerAttack === 'undefined' || playerAttack === undefined){
-            //     playerAttack = allPlayerCardds[number1].attacks[1].damage
-            //     console.log("Player second Attack Used ")
-            // }
-    
-            // if (computerAttack === 'NAN' || computerAttack === 'undefined' ||computerAttack === undefined ){
-            //     computerAttack = allComputerCards[computerNum1].attacks[1].damage
-            //     console.log("Computer second Attack Used ")
-            // }
-
-
+        while (playerHp > computerHp && computerHp > 0){
 
             computerHp = computerHp - playerAttack
             localStorage.setItem(computerHp, computerHp)
             localStorage.getItem(computerHp)
-            console.log(`${computerHp}`)
+            console.log(`Computer HP 1st Attack ${computerHp}`)
             playerHp = playerHp - computerAttack
             localStorage.setItem(playerHp, playerHp)
             localStorage.getItem(playerHp)
-            console.log(`${playerHp}`)
+            console.log(`Player HP 1st attack ${playerHp}`)
 
-        if (playerAttack > computerAttack && computerHp <= playerHp || playerHp === computerHp )    {
+        if (playerAttack > computerHp && playerHp >= computerHp  || playerHp === computerHp && playerAttack > computerHp)    {
+            console.log(`Computer HP at If Statement:${computerHp} Player HP at If Statement ${playerHp} `)
             console.log("Player Wins")
             alert("Player Wins")
             location.reload()
        
-        } else (playerHp <= 0 && computerHp > 0);{
-            alert("Computer Wins")
-            location.reload()
+        } else (playerHp < computerHp && playerHp <= 0);{
+            //  alert("Computer Wins")
+                location.reload()
+    }
+        // (playerHp < 0 && computerHp > 0);{
+        //     console.log(`Computer HP at Else Statement ${computerHp} Player HP at Else Statement ${playerHp}`)
+        //     alert("Computer Wins")
+        //     location.reload()
                 
-        }
+        //     }
     }
 })
     })
