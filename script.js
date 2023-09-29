@@ -14,6 +14,11 @@ function playerScreenResize() {
     }
 window.onload = playerScreenResize()
 
+function introModalResize(){
+    document.getElementById("myModal").style.backgroundSize=`${w}px ${h}px`;
+} 
+introModalResize()
+
 function attackResize(){
     document.getElementById("attackModal").style.backgroundSize=`${w}px ${h}px`;
 }
