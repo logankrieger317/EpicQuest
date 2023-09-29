@@ -53,7 +53,7 @@ button.addEventListener('click', async () => {
     allComputerCards =computerCard1.data.data
     comPokemonName.innerText = allComputerCards[computerNum1].name
     comPokemonImage.src = allComputerCards[computerNum1].images.small
-    
+    document.getElementById("comPokemonImage").style.size
 
     //Attack Button
     let attack1 =  allPlayerCards[number1].attacks[0].name
@@ -76,40 +76,57 @@ button.addEventListener('click', async () => {
         // Battle Loop
             if (playerHp > 0 && computerHp > 0){
                 computerHp = computerHp - playerAttack
+                localStorage.setItem(computerHp, computerHp)
+
                 console.log(`CHP after PAttack ${computerHp}`)
+                
                 
                 computerAttack = allComputerCards[computerNum1].attacks[0].damage
                 // playerHp = allPlayerCards[number1].hp
                 console.log(`Name of CAttack ${computerAttack}`)
-        
+                
+
                 playerHp = playerHp - computerAttack
                 console.log(`playerHP After ${computerAttack}  ${playerHp}`)
-                
+
+                localStorage.setItem(playerHp, playerHp)
+                localStorage.getItem(playerHp)
+                localStorage.getItem(computerHp)
+                console.log(localStorage.getItem(` the player HP is ${playerHp}`))
+                console.log(localStorage.getItem(` the computer HP is ${computerHp}`))
+                console.log(`playerHP After ${computerAttack}  ${playerHp}`)
                         if (playerHp > computerHp && computerHp <= 0)    {
                          console.log("Player Wins")
                          playerScore = playerScore++
                          playerScore.innerHTML = playerScore
 
-                        }else (playerHp < computerHp && playerHp <= 0);{
+                        }else if (playerHp < computerHp && playerHp <= 0){
                             console.log("Computer Wins")
                            computerScore = computerScore++
-                            computerScore.innerHTML = computerScore}
+                            computerScore.innerHTML = computerScore
+                        }else (playerHp >0 && computerHp >0) ;{
+                            localStorage.getItem(playerHp)
+                            localStorage.getItem(computerHp)
+                            console.log(`playerHP After another ${computerAttack}  ${playerHp}`)
+                        }
+                        
 
-                }else if (playerHp < computerHp && playerHp <= 0){
-                    console.log("Computer Wins")
-                    computerScore++
-                    computerScore.innerHTML = computerScore
-                }else (playerHp > 0 && computerHp <= 0);{
-                    console.log("Player Wins")
+                // }else if (playerHp < computerHp && playerHp <= 0){
+                //     console.log("Computer Wins")
+                //     computerScore++
+                //     computerScore.innerHTML = computerScore
+                // }else (playerHp > 0 && computerHp <= 0);{
+                //     console.log("Player Wins")
                     
-                    playerScore.innerHTML = playerScore++
-                }
+                //     playerScore.innerHTML = playerScore++
+                // }
             
+                    }
+                }
+            )
         }
     )
 
-}
-)
 //Modal Logic
 // Get the modal
 let modal = document.getElementById("myModal");

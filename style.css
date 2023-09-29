@@ -296,3 +296,15 @@ h1{
 .modal-title{
   padding: 10px;
 }
+@media only  screen and (max-width: 450px){
+  #pokemonImage {
+    height: 40%;
+
+}
+  #comPokemonImage {
+    height: 40%;
+  }
+
+
+
+}
