@@ -3,6 +3,7 @@
 ![Alt text](HAPcjg.jpg)
 
 ***Resources***
+
 Deployment: https://pokemonbattlearena.surge.sh
 
 For this projects I am creating a Pokemon game that utilizes an api call from https://api.pokemontcg.io.
@@ -45,3 +46,5 @@ I would like to add the following as stretch goals/ work in progress;
 ***Unfinished***
 
 1. Cards that do not have points assinged to the attack cause an error that I have not been able to work around yet.
+2. Created for phone screens, need to change design for larger screens.
+3. 
