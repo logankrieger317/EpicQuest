@@ -66,12 +66,12 @@ button.addEventListener('click', async () => {
     const computerCard1 = await axios.get(`https://api.pokemontcg.io/v2/cards`)
     allComputerCards =computerCard1.data.data
 
-    comPokemonName.innerText = allComputerCards[testPairs2[1]].name
-    comPokemonImage.src = allComputerCards[testPairs2[1]].images.small
+    comPokemonName.innerText = allComputerCards[testPairs2[2]].name
+    comPokemonImage.src = allComputerCards[testPairs2[2]].images.small
     document.getElementById("comPokemonImage").style.size
 
     //Attack Button
-    let attack1 =  allPlayerCards[testPairs[1]].attacks[0].name
+    let attack1 =  allPlayerCards[testPairs[2]].attacks[0].name
     console.log(attack1)
     
 
@@ -79,14 +79,14 @@ button.addEventListener('click', async () => {
     
     attackButton.addEventListener('click', () => {
         console.log("Start Attacks")
-        let playerAttack1 =  allPlayerCards[testPairs[1]].attacks[0].damage
+        let playerAttack1 =  allPlayerCards[testPairs[2]].attacks[0].damage
         let playerAttack = playerAttack1.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(playerAttack) 
-        let computerAttack = allComputerCards[testPairs2[1]].attacks[0].damage
+        let computerAttack = allComputerCards[testPairs2[2]].attacks[0].damage
         computerAttack = computerAttack.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(computerAttack)
-        let computerHp = allComputerCards[testPairs2[1]].hp
-        let playerHp = allPlayerCards[testPairs[1]].hp
+        let computerHp = allComputerCards[testPairs2[2]].hp
+        let playerHp = allPlayerCards[testPairs[2]].hp
 
         // Battle Loop
         while (playerHp > computerHp && computerHp > 0){
@@ -107,7 +107,7 @@ button.addEventListener('click', async () => {
             location.reload()
        
         } else (playerHp < computerHp && playerHp <= 0);{
-            //  alert("Computer Wins")
+             alert("Computer Wins")
             console.log(`Computer HP at Else Statement ${computerHp} Player HP at Else Statement ${playerHp}`)
                 location.reload()
     }
