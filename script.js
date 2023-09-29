@@ -2,16 +2,24 @@
 
 const w = window.innerWidth;
 const h= window.innerHeight;
+const w2 = w/2;
+const h2 = h/2;
+
+
 let PlayerScreenSize = `${w}px ${h}px`
 console.log(PlayerScreenSize)
 
 function playerScreenResize() {
     document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
     console.log(`${w}px ${h}px`)
-    // document.getElementById('myModal').style.backgroundSize=`${w}px ${h}px`;
     }
 window.onload = playerScreenResize()
 
+function attackResize(){
+    document.getElementById("attackModal").style.backgroundSize=`${w}px ${h}px`;
+    console.log(`${w}px ${h}px`)
+}
+attackButton.onclick = attackResize()
 
 
 //Beginning of Game Logic
@@ -19,7 +27,7 @@ let button = document.querySelector("#startButton")
 
 
 button.addEventListener('click', async () => {
-
+    
 
     //Player Variables
     let pokemonName = document.querySelector("#pokemonName")
@@ -36,21 +44,38 @@ button.addEventListener('click', async () => {
     let number1 = Math.floor(Math.random() * 2 * 100)
     let number2 = Math.floor(Math.random() * 50)
     let computerNum1 = Math.floor(Math.random() * 2* 100)
-    let computerNum2 = Math.floor(Math.random() * 50)
+    let computerNum2 = [179 , 65, 127, 55 , 77 , 69 , 80 , 138 , 83, 191, 5 , 186]
+    
+    let computerNm2 = Math.floor(Math.random()*10)
+    console.log(computerNm2)
+
 
     console.log(number1)
     console.log(computerNum1)
+
     
     //Player Cards &API Call
     const randomCard1 =  await axios.get(`https://api.pokemontcg.io/v2/cards`)
     allPlayerCards = randomCard1.data.data
+    backupCard = allPlayerCards[number2].name
+    backupCardImage = allPlayerCards[number2].images.small
+    console.log(backupCard)
+    console.log(backupCardImage)
+
+    
     pokemonName.innerText = allPlayerCards[number1].name
     pokemonImage.src = allPlayerCards[number1].images.small
+
+    if (allPlayerCards[number1].name === undefined){
+        pokemonName.innerText = backupCard
+        pokemonImage.src = backupCardImage}
+
    
     
    //Computer Cards & API Call
     const computerCard1 = await axios.get(`https://api.pokemontcg.io/v2/cards`)
     allComputerCards =computerCard1.data.data
+
     comPokemonName.innerText = allComputerCards[computerNum1].name
     comPokemonImage.src = allComputerCards[computerNum1].images.small
     document.getElementById("comPokemonImage").style.size
@@ -64,68 +89,101 @@ button.addEventListener('click', async () => {
     
     attackButton.addEventListener('click', () => {
         console.log("Start Attacks")
-        let playerAttack =  allPlayerCards[number1].attacks[0].damage
+        let playerAttack1 =  allPlayerCards[number1].attacks[0].damage
+        let playerAttack = playerAttack1.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(playerAttack) 
         let computerAttack = allComputerCards[computerNum1].attacks[0].damage
+        computerAttack = computerAttack.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(computerAttack)
+        // console.log(computerAttack)
         let computerHp = allComputerCards[computerNum1].hp
-        console.log(computerHp)
+        // console.log(computerHp)
         let playerHp = allPlayerCards[number1].hp
-        console.log(playerHp)
+        // console.log(playerHp)
         
         // Battle Loop
-            if (playerHp > 0 && computerHp > 0){
-                computerHp = computerHp - playerAttack
-                localStorage.setItem(computerHp, computerHp)
+        while (playerHp > computerHp){
 
-                console.log(`CHP after PAttack ${computerHp}`)
+            // if (playerAttack === 'NAN' || playerAttack === 'undefined' || playerAttack === undefined){
+            //     playerAttack = allPlayerCardds[number1].attacks[1].damage
+            //     console.log("Player second Attack Used ")
+            // }
+    
+            // if (computerAttack === 'NAN' || computerAttack === 'undefined' ||computerAttack === undefined ){
+            //     computerAttack = allComputerCards[computerNum1].attacks[1].damage
+            //     console.log("Computer second Attack Used ")
+            // }
+
+
+
+            computerHp = computerHp - playerAttack
+            localStorage.setItem(computerHp, computerHp)
+            localStorage.getItem(computerHp)
+            console.log(`${computerHp}`)
+            playerHp = playerHp - computerAttack
+            localStorage.setItem(playerHp, playerHp)
+            localStorage.getItem(playerHp)
+            console.log(`${playerHp}`)
+
+        if (playerAttack > computerAttack && computerHp <= playerHp || playerHp === computerHp )    {
+            console.log("Player Wins")
+            alert("Player Wins")
+            location.reload()
+       
+        } else (playerHp <= 0 && computerHp > 0);{
+            alert("Computer Wins")
+            location.reload()
                 
-                
-                computerAttack = allComputerCards[computerNum1].attacks[0].damage
-                // playerHp = allPlayerCards[number1].hp
-                console.log(`Name of CAttack ${computerAttack}`)
-                
-
-                playerHp = playerHp - computerAttack
-                console.log(`playerHP After ${computerAttack}  ${playerHp}`)
-
-                localStorage.setItem(playerHp, playerHp)
-                localStorage.getItem(playerHp)
-                localStorage.getItem(computerHp)
-                console.log(localStorage.getItem(` the player HP is ${playerHp}`))
-                console.log(localStorage.getItem(` the computer HP is ${computerHp}`))
-                console.log(`playerHP After ${computerAttack}  ${playerHp}`)
-                        if (playerHp > computerHp && computerHp <= 0)    {
-                         console.log("Player Wins")
-                         playerScore = playerScore++
-                         playerScore.innerHTML = playerScore
-
-                        }else if (playerHp < computerHp && playerHp <= 0){
-                            console.log("Computer Wins")
-                           computerScore = computerScore++
-                            computerScore.innerHTML = computerScore
-                        }else (playerHp >0 && computerHp >0) ;{
-                            localStorage.getItem(playerHp)
-                            localStorage.getItem(computerHp)
-                            console.log(`playerHP After another ${computerAttack}  ${playerHp}`)
-                        }
-                        
-
-                // }else if (playerHp < computerHp && playerHp <= 0){
-                //     console.log("Computer Wins")
-                //     computerScore++
-                //     computerScore.innerHTML = computerScore
-                // }else (playerHp > 0 && computerHp <= 0);{
-                //     console.log("Player Wins")
-                    
-                //     playerScore.innerHTML = playerScore++
-                // }
-            
-                    }
-                }
-            )
         }
-    )
+    }
+})
+    })
+        //     if (playerHp > 0 && computerHp > 0){
+
+        //         computerHp = computerHp - playerAttack
+        //         localStorage.setItem(computerHp, computerHp)
+
+        //         console.log(`CHP after PAttack ${computerHp}`)
+
+        //         computerAttack = allComputerCards[computerNum1].attacks[0].damage
+        //         console.log(`Name of CAttack ${computerAttack}`)
+        
+        //         playerHp = playerHp - computerAttack
+        //         console.log(`playerHP After ${computerAttack}  ${playerHp}`)
+        //         localStorage.setItem(playerHp, playerHp)
+                
+        //         localStorage.getItem(playerHp)
+        //         localStorage.getItem(computerHp)
+
+        //         console.log(`playerHP After ${computerAttack}  ${playerHp}`)
+                
+                
+        //         if (playerHp > computerHp && computerHp <= 0)    {
+        //                  console.log("Player Wins")
+        //                  playerScore = playerScore++
+        //                  playerScore.innerHTML = playerScore
+        //                  if (computerHp <= 0){
+        //                     console.log("Player BIG WIN  Wins")
+        //                  } else myModal.style.display = "block"
+
+
+        //                 }else if (playerHp < computerHp && playerHp <= 0){
+        //                     console.log("Computer Wins")
+        //                     computerScore = computerScore++
+        //                     computerScore.innerHTML = computerScore
+                            
+        //                 }else (playerHp >0 && computerHp >0) ;{
+        //                     localStorage.getItem(playerHp)
+        //                     localStorage.getItem(computerHp)
+        //                     playerHp = playerHp - computerAttack
+        //                     localStorage.setItem(playerHp, playerHp)
+                            
+        //                    return playerHp
+        //                 }
+        //     }
+        // })}) 
+        
+    
 
 //Modal Logic
 // Get the modal
@@ -166,3 +224,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+//launch modal after attacks
+attackModal.onload = function() {
+    attackModal.style.display = "block";
+    }
+
+   

@@ -61,6 +61,21 @@ h1{
     background-color: red;
     cursor: pointer;
 }
+#attackButton{
+    display: flex;
+    border-radius: 50%;
+    background-color: rgb(232, 247, 73);
+    color: black;
+    font-size: 1.5em;
+    font-family: 'Pokemon Solid', sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 30vh;
+    opacity: 0.8;
+    animation: shake 2s infinite;   
+    
+}
 
 
 /* Shaking Animation */
@@ -103,19 +118,19 @@ h1{
 
 
 /* Modal Style */
-/* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 932px; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 932px; 
+    overflow: hidden; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
     text-align: center;
     align-content: center;
     
@@ -171,24 +186,35 @@ h1{
     padding: 10px;
 }
 
-
+.modalSb{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 /* Attack Modal  */
 
 .attackModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    background-image: url(https://mcdn.wallpapersafari.com/medium/66/71/mrGAit.jpg);
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    color: yellow;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 932px; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(8, 8, 8, 0.755); /* Black w/ opacity */
+    width: 100%;  
+    height: 932px; 
+    overflow: hidden;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(8, 8, 8, 0.952); 
     text-align: center;
     align-content: center;
+    z-index: 1;
     
    
 }
@@ -237,17 +263,17 @@ h1{
 }
 
 .damageModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 932px; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(8, 8, 8, 0.755); /* Black w/ opacity */
+  width: 100%; 
+  height: 932px; 
+  overflow: hidden; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(8, 8, 8, 0.995); 
   text-align: center;
   align-content: center;
   
