@@ -6,7 +6,6 @@ body{
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 1em;                                    
 }
-
 h1{
     display: flex;
     align-items: center;
@@ -72,8 +71,6 @@ h1{
     animation: shake 2s infinite;   
     
 }
-
-
 /* Shaking Animation */
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -93,32 +90,28 @@ h1{
     animation: shake 0.5s;
     animation-iteration-count: infinite;
   }
-
-
 /* Modal Style */
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 100px; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 932px; 
-    overflow: hidden; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    text-align: center;
-    align-content: center;
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+   left: 0;
+  top: 0;
+  width: 100%; 
+  height: 932px; 
+  overflow: hidden; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  text-align: center;
+  align-content: center;
     
-   
 }
   .modal-img{
     width: 10vw;
     height: 10vw;
 }
-  
   /* Modal Content */
   .modal-content {
     display: flex;
@@ -133,10 +126,7 @@ h1{
     height: 50%;
     border: 1px solid #888;
     box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
-    
-    
   }
-  
   /* The Close Button */
   .close {
     display: none;
@@ -145,25 +135,21 @@ h1{
     font-size: 28px;
     font-weight: bold;
   }
-  
   .close:hover,
   .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
   }
-
   .modal-btn{
     width: 50%;
     height: auto;
     margin-top: 5x;
     margin-bottom: 10px;
   }
-
   .modal-title{
     padding: 10px;
 }
-
 .modalSb{
   display: flex;
   flex-direction: column;
@@ -171,9 +157,7 @@ h1{
   justify-content: center;
   
 }
-
 /* Attack Modal  */
-
 .attackModal {
     display: none; 
     background-image: url(https://mcdn.wallpapersafari.com/medium/66/71/mrGAit.jpg);
@@ -193,14 +177,11 @@ h1{
     text-align: center;
     align-content: center;
     z-index: 1;
-    
-   
 }
   .modal-img{
     width: 10vw;
     height: 10vw;
 }
-  
   /* Attack Modal Content */
   .AttackModalContent {
     background-color: #fefefe;
@@ -210,10 +191,7 @@ h1{
     border: 1px solid #888;
     width: 100%;
     box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
-    
-    
   }
-  
   /* The Close Button */
   .close {
     color: #aaaaaa;
@@ -221,7 +199,6 @@ h1{
     font-size: 28px;
     font-weight: bold;
   }
-  
   .close:hover,
   .close:focus {
     color: #000;
@@ -235,11 +212,9 @@ h1{
     margin-top: 5x;
     margin-bottom: 10px;
   }
-
   .modal-title{
     padding: 10px;
 }
-
 .damageModal {
   display: none; 
   position: fixed; 
@@ -254,8 +229,6 @@ h1{
   background-color: rgba(8, 8, 8, 0.995); 
   text-align: center;
   align-content: center;
-  
- 
 }
 .modal-img{
   width: 10vw;
@@ -271,10 +244,7 @@ h1{
   border: 1px solid #888;
   width: 100%;
   box-shadow: 20px 20px 10px 0 rgba(0,0,0,0.4);
-  
-  
 }
-
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -282,7 +252,6 @@ h1{
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: #000;
@@ -301,15 +270,10 @@ h1{
   padding: 10px;
 }
 @media only  screen and (max-width: 450px){
-  
   #pokemonImage {
     height: 40%;
-
 }
   #comPokemonImage {
     height: 40%;
   }
-
-
-
 }

@@ -5,7 +5,6 @@ const h= window.innerHeight;
 const w2 = w/2;
 const h2 = h/2;
 
-
 let PlayerScreenSize = `${w}px ${h}px`
 console.log(PlayerScreenSize)
 
@@ -20,14 +19,10 @@ function attackResize(){
 }
 attackButton.onclick = attackResize()
 
-
 //Beginning of Game Logic
 let button = document.querySelector("#startButton")
 
-
 button.addEventListener('click', async () => {
-    
-
     //Player Variables
     let pokemonName = document.querySelector("#pokemonName")
     let pokemonImage = document.querySelector("#pokemonImage")
@@ -49,11 +44,9 @@ button.addEventListener('click', async () => {
     let computerNm2 = Math.floor(Math.random()*10)
     console.log(computerNm2)
 
-
     console.log(number1)
     console.log(computerNum1)
 
-    
     //Player Cards &API Call
     const randomCard1 =  await axios.get(`https://api.pokemontcg.io/v2/cards`)
     allPlayerCards = randomCard1.data.data
@@ -62,15 +55,12 @@ button.addEventListener('click', async () => {
     console.log(backupCard)
     console.log(backupCardImage)
 
-    
     pokemonName.innerText = allPlayerCards[testPairs[1]].name
     pokemonImage.src = allPlayerCards[testPairs[1]].images.small
 
     if (allPlayerCards[testPairs[1]].name === undefined){
         pokemonName.innerText = backupCard
         pokemonImage.src = backupCardImage}
-
-   
     
    //Computer Cards & API Call
     const computerCard1 = await axios.get(`https://api.pokemontcg.io/v2/cards`)
@@ -96,10 +86,8 @@ button.addEventListener('click', async () => {
         computerAttack = computerAttack.replace(/[^a-zA-Z0-9 ]/g, '')
         console.log(computerAttack)
         let computerHp = allComputerCards[testPairs2[1]].hp
-        // console.log(computerHp)
         let playerHp = allPlayerCards[testPairs[1]].hp
-        // console.log(playerHp)
-        
+
         // Battle Loop
         while (playerHp > computerHp && computerHp > 0){
 
@@ -123,13 +111,10 @@ button.addEventListener('click', async () => {
             console.log(`Computer HP at Else Statement ${computerHp} Player HP at Else Statement ${playerHp}`)
                 location.reload()
     }
-        
     }
 })
     })
        
-    
-
 //Modal Logic
 // Get the modal
 let modal = document.getElementById("myModal");
@@ -148,9 +133,7 @@ window.onload = function() {
 //open the attacks once computer card loads
 comPokemonImage.onload = function () {
   attackModal.style.display="block"
-
 }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
@@ -161,18 +144,13 @@ startButton.onclick = function() {
 attackButton.onclick = function(){
   attackModal.style.display= "none";
 }
-
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
-
 //launch modal after attacks
 attackModal.onload = function() {
     attackModal.style.display = "block";
     }
-
-   
