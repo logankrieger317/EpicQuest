@@ -30,11 +30,7 @@ h1{
     flex-wrap: wrap;
     background-color: rgba(7, 7, 7, 0.3);
 }
-#pokemonImage, #comPokemonImage{
-    
-    animation: slideInRight 2s;
-   
-}  
+
 #pokemonName, #comPokemonName{
    padding: 20%;
 } 
@@ -97,24 +93,6 @@ h1{
     animation: shake 0.5s;
     animation-iteration-count: infinite;
   }
-
- @keyframes slideInLeft{
-        0%{
-            transform: translateX(1000px);
-        }
-        100%{
-            transform: translateX(0px);
-        }
- }
-
-    @keyframes slideInRight{
-            0%{
-                transform: translateX(-1000px);
-            }
-            100%{
-                transform: translateX(0px);
-            }
-    }
 
 
 /* Modal Style */

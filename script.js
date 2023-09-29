@@ -121,62 +121,14 @@ button.addEventListener('click', async () => {
        
         } else (playerHp < computerHp && playerHp <= 0);{
             //  alert("Computer Wins")
+            console.log(`Computer HP at Else Statement ${computerHp} Player HP at Else Statement ${playerHp}`)
                 location.reload()
     }
-        // (playerHp < 0 && computerHp > 0);{
-        //     console.log(`Computer HP at Else Statement ${computerHp} Player HP at Else Statement ${playerHp}`)
-        //     alert("Computer Wins")
-        //     location.reload()
-                
-        //     }
+        
     }
 })
     })
-        //     if (playerHp > 0 && computerHp > 0){
-
-        //         computerHp = computerHp - playerAttack
-        //         localStorage.setItem(computerHp, computerHp)
-
-        //         console.log(`CHP after PAttack ${computerHp}`)
-
-        //         computerAttack = allComputerCards[computerNum1].attacks[0].damage
-        //         console.log(`Name of CAttack ${computerAttack}`)
-        
-        //         playerHp = playerHp - computerAttack
-        //         console.log(`playerHP After ${computerAttack}  ${playerHp}`)
-        //         localStorage.setItem(playerHp, playerHp)
-                
-        //         localStorage.getItem(playerHp)
-        //         localStorage.getItem(computerHp)
-
-        //         console.log(`playerHP After ${computerAttack}  ${playerHp}`)
-                
-                
-        //         if (playerHp > computerHp && computerHp <= 0)    {
-        //                  console.log("Player Wins")
-        //                  playerScore = playerScore++
-        //                  playerScore.innerHTML = playerScore
-        //                  if (computerHp <= 0){
-        //                     console.log("Player BIG WIN  Wins")
-        //                  } else myModal.style.display = "block"
-
-
-        //                 }else if (playerHp < computerHp && playerHp <= 0){
-        //                     console.log("Computer Wins")
-        //                     computerScore = computerScore++
-        //                     computerScore.innerHTML = computerScore
-                            
-        //                 }else (playerHp >0 && computerHp >0) ;{
-        //                     localStorage.getItem(playerHp)
-        //                     localStorage.getItem(computerHp)
-        //                     playerHp = playerHp - computerAttack
-        //                     localStorage.setItem(playerHp, playerHp)
-                            
-        //                    return playerHp
-        //                 }
-        //     }
-        // })}) 
-        
+       
     
 
 //Modal Logic
