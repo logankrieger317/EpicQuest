@@ -1,30 +1,31 @@
 # EpicQuest
 
+![Alt text](HAPcjg.jpg)
+
 ***Resources***
+Deployment: https://pokemonbattlearena.surge.sh
+
 For this projects I am creating a Pokemon game that utilizes an api call from https://api.pokemontcg.io.
 
 my Wire Frame can be viewed follwing this link. 
 https://www.figma.com/file/o0e9v8LVFv1Fhps3f9HOcU/Untitled?type=design&node-id=0%3A1&mode=design&t=mFNdHIp8WB58hHxX-1 
 
-My successful API Call can be viewed by utilizing live server and entering in dp3-1 or mcd19-1 into the search bar. 
+W3schools.com was used for any additional references to work through issues or complications.
+
 
 ***Gameplay***
 
-The game will begin with 2 "stacks" of cards. 1 set will be for playerOne and the second will be for a computerOpponent. 
+The game will begin with 2 cards set on the table. 1 card will be for playerOne and the second will be for a computer opponent. 
 
-When playerOne selects start game the player and computer will be randomly assinged 7 cards. The Player will then select which card to play first. Once the player decides which card to use the computer will randomly assign a card from its hand to play first. 
+When playerOne selects start game the player and computer will be randomly assinged 1 card. The player attack screen will appear, the user will be prompted to attack.
 
-Once the initial card has been chosen by playerOne, PlayerOne will see a pop up box and choose a move from one of the move buttons. The damage from that move will be deducted from the computerChoice and a dialog box will display the amount of damage inflicted.
+The damage from that move will be deducted from the computerChoice and a dialog box will display the amount of damage inflicted.
 
-The screen will then animate the computerCard by shaking the card and the computer will then choose an attack at random and the player card will animate with a shaking motion. A display box showing the amount of damage recieved will then display for playerOne.
+If the computer card loses its health points first then the player will be declared the winner.
 
-If the computer card loses its health points first then the computer will automatically choose another card to enter into the battle.
+Gameplay will continue until either playerOne or the computer is out of health.
 
-If playerOne card is defeated first the user will be prompted to choose another card and gameplay will continue. 
-
-Gameplay will continue until either playerOne or the computer is out of cards.
-
-The screen will then animate displaying the winner in a pop up box and the option to play again.
+The gameboard will then be reset.
 
 ***Challenges***
 
@@ -32,3 +33,15 @@ I forsee some challenges in drilling down the data from the API and storing it a
 
 I forsee challenges in developing the gameplay logic, the randomness of the cards, the math required for the individuals moves and its damage points, as well as the computer AI for the user to play with will all present a challenge.
 
+***Stretch Goals***
+
+I would like to add the following as stretch goals/ work in progress;
+
+1. Modals that continue the gameplay instead of utilizing an alert box
+2. Player being able to select from a card deck and being able to use multiple cards.
+3. More animations for the cards
+4. The ability to use any Pokemon Card (ie promo, Japanese language cards, special expansions)
+
+***Unfinished***
+
+1. Cards that do not have points assinged to the attack cause an error that I have not been able to work around yet.

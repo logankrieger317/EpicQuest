@@ -11,13 +11,12 @@ console.log(PlayerScreenSize)
 
 function playerScreenResize() {
     document.getElementById("body").style.backgroundSize=`${w}px ${h}px`;
-    console.log(`${w}px ${h}px`)
+    
     }
 window.onload = playerScreenResize()
 
 function attackResize(){
     document.getElementById("attackModal").style.backgroundSize=`${w}px ${h}px`;
-    console.log(`${w}px ${h}px`)
 }
 attackButton.onclick = attackResize()
 
